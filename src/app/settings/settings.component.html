@@ -1,0 +1,43 @@
+<div class="wrap">
+  <mat-card class="setting-card">
+    <h1 class="text-xs-center">Your Settings</h1>
+    <form [formGroup]="settingsForm" (ngSubmit)="submitForm()" >
+      <list-errors [errors]="errors"></list-errors>
+      <fieldset [disabled]="isSubmitting">
+        <mat-form-field class=full>
+          <input matInput placeholder="URL of profile picture" type="text" formControlName="image">
+        </mat-form-field>
+        <mat-form-field class=full>
+          <input matInput placeholder="Username" type="text" formControlName="username">
+        </mat-form-field>
+        <mat-form-field class=full>
+          <textarea matInput placeholder="Short bio about you" type="text" rows="2" formControlName="bio"></textarea>
+        </mat-form-field>
+        <mat-form-field class=full>
+          <input matInput placeholder="Email" type="text" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class=full>
+          <input matInput placeholder="New Password" type="password" formControlName="password">
+        </mat-form-field>
+        <button mat-raised-button type="submit">
+              Update Settings
+            </button>
+        
+        
+      </fieldset>
+
+        
+
+      
+    </form>
+        <button mat-raised-button class="logout" (click)="logout()">
+              Or click here to logout.
+            </button>
+        
+  </mat-card>
+
+
+
+
+</div>
+

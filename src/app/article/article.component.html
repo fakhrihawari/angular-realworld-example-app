@@ -1,0 +1,132 @@
+<div class="page-article">
+  <div class="article-view">
+    
+      <h1>{{ article.title }}</h1>
+
+      <article-meta [article]="article">
+
+          
+
+        <span [hidden]="!canModify">
+
+          <a mat-raised-button class="background-primary-follow-color"
+             [routerLink]="['/editor', article.slug]">
+            <i class="material-icons">mode_edit</i> Edit Article
+          </a>
+
+          <button mat-raised-button class="background-warn-color white-text" 
+            [ngClass]="{disabled: isDeleting}"
+            (click)="deleteArticle()">
+            <i class="material-icons">delete</i> Delete Article
+          </button>
+          
+        </span>
+
+        <span [hidden]="canModify">
+          <follow-button
+            [profile]="article.author"
+            (onToggle)="onToggleFollowing($event)">
+          </follow-button>
+
+          <favorite-button
+            [article]="article"
+            (onToggle)="onToggleFavorite($event)">
+            {{ article.favorited ? 'Unfavorite' : 'Favorite' }} Article <span class="counter">({{ article.favoritesCount }})</span>
+          </favorite-button>
+        </span>
+
+      </article-meta>   
+    
+  </div>
+
+  <div class="article-main">
+    <div class="article-tag">
+      <div [innerHTML]="article.body | markdown"></div>
+      <mat-chip-list>
+        <mat-chip *ngFor="let tag of article.tagList">{{tag}}</mat-chip>
+      </mat-chip-list>
+    
+    </div>
+
+    <div class="action-article">
+
+      <article-meta [article]="article">        
+
+        <span [hidden]="!canModify">
+
+          <a mat-raised-button class="background-primary-follow-color"
+             [routerLink]="['/editor', article.slug]">
+            <i class="material-icons">mode_edit</i> Edit Article
+          </a>
+
+          <button mat-raised-button class="background-warn-color white-text" 
+            [ngClass]="{disabled: isDeleting}"
+            (click)="deleteArticle()">
+            <i class="material-icons">delete</i> Delete Article
+          </button>
+          
+        </span>
+
+        
+
+
+        <span [hidden]="canModify">
+          <follow-button
+            [profile]="article.author"
+            (onToggle)="onToggleFollowing($event)">
+          </follow-button>
+
+          <favorite-button
+            [article]="article"
+            (onToggle)="onToggleFavorite($event)">
+            {{ article.favorited ? 'Unfavorite' : 'Favorite' }} Article <span class="counter">({{ article.favoritesCount }})</span>
+          </favorite-button>
+        </span>
+
+      </article-meta>
+      
+    </div>
+
+    <div class="comment-article">
+        <div *showAuthed="true" >
+          <list-errors [errors]="commentFormErrors"></list-errors>      
+            <form (ngSubmit)="addComment()">
+              <fieldset [disabled]="isSubmitting">
+
+                <mat-card class="type-card">           
+                 
+                    <textarea 
+                      placeholder="Write a comment..."
+                      rows="5"
+                      [formControl]="commentControl" class="full">
+                      
+                    </textarea>               
+                    
+                  
+                  <mat-card-footer class="comment-footer">
+                    <button mat-raised-button class="background-primary-favorite-color white-text" type="submit">Post Comment</button>                   
+                    
+                  </mat-card-footer>
+                </mat-card>               
+              </fieldset>
+            </form>          
+        </div>
+
+        <div *showAuthed="false">
+          <a [routerLink]="['/login']">Sign in</a> or <a [routerLink]="['/register']">sign up</a> to add comments on this article.
+        </div>
+        <div class="list-comment">
+          <article-comment
+          *ngFor="let comment of comments"
+          [comment]="comment"
+          (deleteComment)="onDeleteComment(comment)">
+          </article-comment>
+        </div>
+            
+    </div>
+
+  </div>
+  
+  
+  
+</div>

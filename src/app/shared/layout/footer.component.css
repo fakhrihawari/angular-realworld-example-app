@@ -1,0 +1,17 @@
+.footer{
+	padding-top: 25px;
+	background-color: 
+	#5cb85c;
+	min-height: 50px;
+	font-size: 13px;
+	text-align: center;
+	
+	color: #fff;
+	
+}
+
+.footer a{
+	text-decoration: none;
+	color: #2b2d31;
+
+}

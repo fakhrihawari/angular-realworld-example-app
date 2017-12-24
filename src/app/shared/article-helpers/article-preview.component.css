@@ -1,0 +1,16 @@
+.preview-article a{
+	text-decoration: none;
+	color:  #5cb85c;
+}
+
+.preview-article .mat-card{
+	margin-bottom: 20px;
+}
+
+.mat-chip-list-wrapper{
+	margin-top: 10px;
+}
+
+.mat-card-content{
+
+}

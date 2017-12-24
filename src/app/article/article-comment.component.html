@@ -1,0 +1,32 @@
+<mat-card class="comment-card">
+  <mat-card-content>
+    <p>
+       {{ comment.body }}
+    </p>
+  </mat-card-content>
+  <mat-card-footer class="comment-footer">
+    <div class="comment-profile">
+      <a class="comment-author" [routerLink]="['/profile', comment.author.username]">
+      <img  [src]="comment.author.image" alt="profile-pict" >
+    </a>
+     &nbsp;
+     <div>
+          <a class="comment-author" [routerLink]="['/profile', comment.author.username]">
+            {{ comment.author.username }}
+          </a>
+    <span class="date-posted">
+      {{ comment.createdAt | date: 'longDate' }}
+    </span>
+     </div>
+     
+    </div>
+    
+    <span class="delete-comment"  [hidden]="!canModify">
+      <i class="material-icons" (click)="deleteClicked()">delete</i>
+    </span>    
+    
+  </mat-card-footer>
+
+</mat-card>
+
+

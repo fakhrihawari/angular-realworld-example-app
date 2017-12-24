@@ -1,0 +1,37 @@
+<div class="wrap">
+  <mat-card class="login-card">
+        <mat-card-header>
+          
+          <mat-card-title>
+            <h1>{{ title }}</h1>
+          </mat-card-title>     
+          
+        </mat-card-header>
+
+        <p class="ask">
+            <a [routerLink]="['/login']" *ngIf="authType == 'register'">Have an account?</a>
+            <a [routerLink]="['/register']" *ngIf="authType == 'login'">Need an account?</a>
+          </p>
+        <list-errors [errors]="errors"></list-errors>
+        
+        <form [formGroup]="authForm" (ngSubmit)="submitForm()" >
+          <fieldset [disabled]="isSubmitting" >
+              <mat-form-field class="full" *ngIf="authType == 'register'" >
+                <input matInput formControlName="username" placeholder="Username" type="text" >
+              </mat-form-field>
+              <mat-form-field class="full"  >
+                <input matInput formControlName="email" placeholder="Email" type="email"  >
+              </mat-form-field>
+              <mat-form-field class="full">
+                <input matInput formControlName="password" placeholder="Password" type="password" >
+              </mat-form-field>
+          </fieldset>
+           <button mat-raised-button  type="submit">  {{ title }}</button>
+        </form>       
+        
+         
+          
+        
+  </mat-card>
+</div>
+

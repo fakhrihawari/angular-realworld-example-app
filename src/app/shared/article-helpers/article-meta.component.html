@@ -1,0 +1,24 @@
+<div class="meta-article">
+  <div class="profile-konten">
+    <a [routerLink]="['/profile', article.author.username]">
+      <img [src]="article.author.image" />
+    </a>
+    <div class="meta-info">
+       <div class="meta-name">
+          <a class="meta-author"
+            [routerLink]="['/profile', article.author.username]">
+            {{ article.author.username }}
+          </a>
+       </div>
+        <div class="meta-date">
+          {{ article.createdAt | date: 'longDate' }}
+        </div>
+    </div>
+  </div> 
+
+  
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+  
+</div>

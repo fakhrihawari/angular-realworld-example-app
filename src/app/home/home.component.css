@@ -1,0 +1,55 @@
+.nav-link {
+  cursor:pointer;
+}
+.page-home{
+	min-height: 550px;
+}
+
+.slogan{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	background-color:#d6d6d6;
+	min-height: 100px;
+	color:#5cb85c;
+}
+
+.slogan h1{
+	font-size: 70px;
+}
+
+.flex-container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	align-items: flex-start;
+	margin-top:20px;
+
+}
+
+.preview{
+	margin:10px 40px 10px 40px;
+	flex:3;
+}
+
+.tag{
+	flex:1;
+	margin:10px 40px 10px 40px;
+}
+
+.mat-tab-link{
+	/*background-color: #5cb85c;*/
+	color:  #5cb85c;
+	border-bottom: 3px solid #5cb85c;
+	opacity: 1;
+}
+
+.mat-tab-link:focus{
+	
+	background-color: rgba(197, 233, 206, 0.3) !important;
+}
+
+
+

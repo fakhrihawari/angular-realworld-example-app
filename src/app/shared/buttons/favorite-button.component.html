@@ -1,0 +1,8 @@
+<button mat-raised-button [ngClass]="{ 'disabled' : isSubmitting,
+              'background-favorite-color': !article.favorited,
+              'background-primary-favorite-color': article.favorited,
+              'green-text':!article.favorited }"
+ (click)="toggleFavorite()" class="white-text">
+	<i class="material-icons">favorite</i> <ng-content></ng-content>
+	
+</button>

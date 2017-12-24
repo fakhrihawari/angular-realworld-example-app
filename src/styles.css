@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.primary-color {
+    color: #5cb85c!important;
+  }
+.accent-color {
+    color: #adadad!important;
+  }
+.background-primary-follow-color {
+    background-color: #adadad!important;
+  }
+.background-accent-follow-color {
+    background-color: #e2e2e2!important;
+  }
+
+  .background-warn-color{
+    background-color: #b85c5c!important;
+  }
+
+  .background-primary-favorite-color{
+  	 background-color: #5cb85c!important;
+  }
+  
+.white-text {
+    color: #FFF!important;
+}
+
+.shade-text{
+	color: #494c4d!important;
+}
+.green-text{
+	color: #5cb85c!important;
+}
+
+body{
+  width: 100%;
+  margin:0;
+  font-family: 'Roboto';
+  padding: 0;
+
+}
+
+.mat-form-field-ripple{
+  background-color: #5cb85c!important;
+}

@@ -1,0 +1,58 @@
+<div class="wrapper">
+
+
+    <mat-toolbar class="primary-color" *showAuthed="false">
+      <mat-toolbar-row>
+        <span><a mat-button routerLink="/">Conduit</a></span>
+        <span class="example-spacer"></span>
+        <span><a mat-button
+          routerLink="/login"
+          routerLinkActive="active">
+          Sign in
+        </a></span>
+        <span>
+          <a mat-button
+          routerLink="/register"
+          routerLinkActive="active">
+          Sign up
+        </a>
+        </span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-toolbar class="primary-color" *showAuthed="true">
+      <mat-toolbar-row>
+        <span><a mat-button routerLink="/">Conduit</a></span>
+        <span class="example-spacer"></span>
+        <span><a  mat-button
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">
+          Home
+        </a></span>
+        <span><a mat-button 
+          routerLink="/editor"
+          routerLinkActive="active">
+          <i class="ion-compose"></i>&nbsp;New Article
+        </a></span>
+        <span><a mat-button 
+          routerLink="/settings"
+          routerLinkActive="active">
+          <i class="ion-gear-a"></i>&nbsp;Settings
+        </a></span>
+        <span><a  mat-button
+          [routerLink]="['/profile', currentUser.username]"
+          routerLinkActive="active">
+          <img [src]="currentUser.image" *ngIf="currentUser.image" class="user-pic" />
+          {{ currentUser.username }}
+        </a></span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+
+
+    
+
+    
+
+  </div>

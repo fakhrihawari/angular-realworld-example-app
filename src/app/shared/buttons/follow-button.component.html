@@ -1,0 +1,6 @@
+<button mat-raised-button  [ngClass]="{ 'disabled': isSubmitting,'background-follow-accent-color':!profile.following, 'background-primary-follow-color': profile.following}" (click)="toggleFollowing()" class="shade-text">
+	<i class="material-icons">fingerprint</i>
+	{{ profile.following ? 'Unfollow' : 'Follow' }} {{ profile.username }}
+</button>
+
+

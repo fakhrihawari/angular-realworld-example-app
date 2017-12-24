@@ -1,0 +1,39 @@
+.meta-article{
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.meta-article a{
+	text-decoration: none;
+	color:#5cb85c;
+}
+.profile-konten{
+	width: 200px;
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+
+}
+.profile-konten img{
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	
+}
+
+.meta-info{
+	margin-left: 10px;
+	
+}
+
+.meta-date{
+	font-size: 13px;
+	color: #959595;
+}
+
+.content{
+	
+}
+

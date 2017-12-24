@@ -1,0 +1,34 @@
+<div class="preview-article">
+
+  <mat-card>
+     <article-meta [article]="article">
+        <favorite-button
+          [article]="article"
+          (onToggle)="onToggleFavorite($event)">
+          {{article.favoritesCount}}
+        </favorite-button>
+      </article-meta>
+
+
+    <mat-card-content >
+      <a [routerLink]="['/article', article.slug]" class="preview-link">
+        <h1>{{ article.title }}</h1>
+        <p>{{ article.description }}</p>
+        <span>Read more...</span>    
+        <mat-chip-list>
+          <mat-chip *ngFor="let tag of article.tagList">{{ tag }}</mat-chip>
+          <mat-chip class="background-accent-follow-color green-text">fasa</mat-chip>
+        </mat-chip-list>
+      </a>
+    </mat-card-content>
+      
+
+  </mat-card>
+
+ 
+
+  
+
+
+  
+</div>

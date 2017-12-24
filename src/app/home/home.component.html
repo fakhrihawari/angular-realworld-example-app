@@ -1,0 +1,50 @@
+<div class="page-home">
+  <div class="slogan" *showAuthed="false">
+    <h1>conduit</h1>
+      <p>A place to share your <i>Angular 2</i> knowledge.</p>
+    
+  </div>
+
+
+  <div class="flex-container">
+
+    <div class="preview">
+
+      <nav mat-tab-nav-bar >
+
+      
+        <a mat-tab-link [ngClass]="{'active': listConfig.type === 'feed'}"
+                 (click)="setListTo('feed')">
+                Your Feed
+        </a>
+
+        <a mat-tab-link [ngClass]="{'active': listConfig.type === 'all' && !listConfig.filters.tag}"
+                 (click)="setListTo('all')">
+                 Global Feed
+                     
+        </a>
+        
+        <div [hidden]="!listConfig.filters.tag" >
+           <a mat-tab-link   >
+          {{ listConfig.filters.tag }} 
+        </a>
+        </div>
+       
+      </nav>
+
+     <article-list [limit]="10" [config]="listConfig"></article-list>
+    </div>
+
+    <div class="tag">
+        <p>Popular Tags</p>      
+            <mat-chip-list>
+              <mat-chip  *ngFor="let tag of tags"
+                           (click)="setListTo('all', {tag: tag})"
+                           class="background-primary-favorite-color white-text">
+                           {{ tag }}
+              </mat-chip>
+            </mat-chip-list>   
+
+    </div>    
+  </div>
+</div>

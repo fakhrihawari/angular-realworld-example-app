@@ -1,0 +1,36 @@
+.comment-card{
+	margin-bottom: 20px;
+	/*width: 800px;*/
+}
+.comment-footer{
+	font-size: 13px;
+	background-color: #f5f5f5;
+	padding: 10px 20px 10px 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.comment-footer a{
+	text-decoration: none;
+	color: #5cb85c
+}
+
+
+
+.comment-author img{
+	height: 30px;
+	width: 30px;
+
+	border-radius: 50%;
+}
+
+.date-posted{
+
+	color: #959595;
+
+}
+
+.delete-comment{
+	float: right;
+	color: #959595;
+}

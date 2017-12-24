@@ -1,0 +1,34 @@
+.wrap{
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	
+}
+
+fieldset{
+	border: none;
+}
+.full{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.mat-card:not([class*=mat-elevation-z]){
+	box-shadow:  0 2px 2px 0 rgb(92, 184, 92), 0 1px 5px 0 rgb(92, 184, 92), 0 3px 1px -2px rgb(92, 184, 92);
+}
+
+.article-card {
+  width: 900px;
+  box-shadow: 0 2px 2px 0 rgb(84, 148, 13), ;
+  margin-bottom: 20px;
+  
+}
+
+.mat-raised-button{
+	/*border: 2px solid #5cb85c;*/
+	color: #fff;
+	float: right;
+	margin-bottom: 20px;
+	background-color:  #5cb85c;
+}
+
